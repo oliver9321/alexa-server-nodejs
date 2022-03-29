@@ -25,8 +25,8 @@ app.set("view engine", "ejs");
 app.set("json spaces", 4);
 
 var authServer = {
-  authorizationEndpoint: "http://127.0.0.1:4005/authorize",
-  tokenEndpoint: "http://127.0.0.1:4005/token",
+  authorizationEndpoint: "https://gentle-harbor-07276.herokuapp.com/authorize",
+  tokenEndpoint: "https://gentle-harbor-07276.herokuapp.com/token",
 };
 
 var clients = [
@@ -157,7 +157,7 @@ var buildUrl = (base, options) => {
 app.use("/", express.static("files/authorizationServer"));
 
 
-var server = app.listen(4005, "127.0.0.1", function () {
+var server = app.listen(4005, function () {
   var host = server.address().address;
   var port = server.address().port;
 
