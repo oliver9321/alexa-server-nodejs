@@ -43,11 +43,10 @@ var state_data = {};
 var client_data = {};
 var scope_data = {}
 
-/*
+
 app.get('/', function(req, res) {
-	return res.render('index', {clients: clients, authServer: authServer});
+	return res.send('hola mundo');
 });
-*/
 
 app.get("/authorize", (req, res) => {
     // redirect data from request.
@@ -158,9 +157,9 @@ app.use("/", express.static("files/authorizationServer"));
 
 const PORT = process.env.PORT;
 
-var server = app.listen(PORT, "https://gentle-harbor-07276.herokuapp.com", function () {
-  var host = server.address().address;
+var server = app.listen(PORT, function () {
+ // var host = server.address().address;
   var port = server.address().port;
 
-  console.log("Authorization server is listening at http://%s:%s", host, port);
+  console.log("Authorization server is listening at %s",  port);
 });
