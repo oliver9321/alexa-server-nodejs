@@ -158,7 +158,7 @@ app.use("/", express.static("files/authorizationServer"));
 
 const PORT = process.env.PORT;
 
-var server = app.listen(PORT, function () {
+var server = app.listen(PORT, "https://gentle-harbor-07276.herokuapp.com", function () {
   var host = server.address().address;
   var port = server.address().port;
 
