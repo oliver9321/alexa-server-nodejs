@@ -156,8 +156,9 @@ var buildUrl = (base, options) => {
 
 app.use("/", express.static("files/authorizationServer"));
 
+const PORT = process.env.PORT;
 
-var server = app.listen(4005, function () {
+var server = app.listen(PORT, function () {
   var host = server.address().address;
   var port = server.address().port;
 
